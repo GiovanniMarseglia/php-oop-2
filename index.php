@@ -5,9 +5,6 @@
 
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,30 +27,11 @@
                 <figure class="position-relative w-100">
                     <img class="w-100" src="<?php echo $element->img?>" alt="">
                     <!-- <i class="position-absolute"></i> -->
-
-
-
-
-
-
-                    
-                        <?php if($element->animal == "dog"){?>
-                                <i class="position-absolute fa-solid fa-dog rounded-circle bg-light rounded-circle p-1" style="top:5px; right:5px"></i>
-                            <?php }?>
-                        <?php if($element->animal == "cat"){?>
-                            <i class="position-absolute fa-solid fa-cat bg-light rounded-circle p-1" style="top:5px; right:5px"></i>
-                        <?php }?>
+            
+                    <i class="position-absolute fa-solid fa-<?php echo $element->animal?> rounded-circle bg-light rounded-circle p-1" style="top:5px; right:5px"></i>
+                           
 
                         
-
-
-
-
-
-
-
-
-
                 </figure>
                 <h2><?php echo $element->name?></h2>
                 <div class="d-flex">
