@@ -7,8 +7,8 @@ class product{
     public $type;
     public $img;
     public $animal; 
-    public $calories;
-    public $Genre;
+    
+    
 
     public function __construct($_name, $_prezzo, $_type, $_img, $_animal){
 
@@ -19,7 +19,21 @@ class product{
         $this->animal = $_animal;
 
     }
+
+    
 }
+
+class food extends product{
+    public $calories;
+}
+
+
+class game extends product{
+    public $namegenre;
+}
+
+
+
 
 
 $productdata = array(
@@ -32,15 +46,25 @@ $product_istance=array();
 
 
 foreach($productdata as $element){
-    $products = new product($element->name, $element->prezzo, $element->type, $element->img, $element->animal);
-    if(isset($element->calories)){
+
+
+
+    if (isset($element->calories)) {
+        $products = new food($element->name, $element->prezzo, $element->type, $element->img, $element->animal);
         $products->calories = $element->calories;
-    }
-    if(isset($element->genre)){
-        $products->genre = $element->genre;
+        $product_istance[] = $products;
+    } else if (isset($element->genre)){
+
+        $products = new game($element->name, $element->prezzo, $element->type, $element->img, $element->animal);
+        $products->namegenre = $element->genre;
+        $product_istance[] = $products;
+
+    }else{
+        $products = new product($element->name, $element->prezzo, $element->type, $element->img, $element->animal);
+        $product_istance[] = $products;
     }
 
-    $product_istance[] = $products;
+
 }
 
 
