@@ -51,9 +51,9 @@
                             <span>Calories:</span>
                             <span><?php echo $element->calories?></span>
                             <?php }?>
-                        <?php if(isset($element->genre)){?>
+                        <?php if(isset($element->namegenre)){?>
                         <span>Genre:</span>
-                        <span><?php echo $element->genre?></span>
+                        <span><?php echo $element->namegenre?></span>
                         <?php }?>
 
                         </div>
