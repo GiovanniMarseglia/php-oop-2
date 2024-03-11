@@ -24,6 +24,8 @@ class product{
 
     use stock;
 
+
+
     
 }
 
@@ -38,30 +40,42 @@ class game extends product{
 
 
 
+
+
+
 trait stock{
     
     public function getQuantity($num){
-        if (!is_int($num)) {
-            throw new Exception('Is not a number');
+        try {
+            if (!is_int($num)) {
+                throw new Exception('');
             }
-
-
-        if($num == 0){
-        return '<i class="fa-sharp fa-solid fa-circle" style="color: #bc0b0b;"></i>';
-    }elseif($num > 0 && $num < 5){
-        return '<i class="fa-sharp fa-solid fa-circle" style="color: #9a9509;"></i>';
-    }elseif($num > 7){
-        return '<i class="fa-sharp fa-solid fa-circle" style="color: #0e8906;"></i>';
-    }
+    
+            if($num == 0){
+                return '<i class="fa-sharp fa-solid fa-circle" style="color: #bc0b0b;"></i>';
+            } elseif($num > 0 && $num < 5){
+                return '<i class="fa-sharp fa-solid fa-circle" style="color: #9a9509;"></i>';
+            } elseif($num > 7){
+                return '<i class="fa-sharp fa-solid fa-circle" style="color: #0e8906;"></i>';
+            }
+        } catch (Exception $e) {
+            echo 'none',  $e->getMessage();
+        }
 }
+
+
+
 };
 
 
 
 
 
+
+
+
 $productdata = array(
-    (object) array('name' => 'Collare', 'prezzo' => '12', 'type'=>'Product', 'img'=>'https://picsum.photos/500/200','animal'=>'dog','quantity'=>0),
+    (object) array('name' => 'Collare', 'prezzo' => '12', 'type'=>'Product', 'img'=>'https://picsum.photos/500/200','animal'=>'dog','quantity'=>'0'),
     (object) array('name' => 'Crocchette 1kg', 'prezzo' => '12', 'type'=>'Food', 'img'=>'https://picsum.photos/500/200','animal'=>'dog','calories'=>'500','quantity'=>4 ),
     (object) array('name' => 'Palla da tennis', 'prezzo' => '10', 'type'=>'Game', 'img'=>'https://picsum.photos/500/200','animal'=>'cat','genre'=>'ball','quantity'=>10),
 );
