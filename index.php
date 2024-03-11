@@ -56,6 +56,9 @@
                         <span><?php echo $element->namegenre?></span>
                         <?php }?>
 
+                        <span>Quantity:</span>
+                        <span><?php echo $element->getQuantity($element->quantity)?></span>
+
                         </div>
                     
 
